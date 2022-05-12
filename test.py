@@ -62,7 +62,7 @@ if authentication_status:
         file2 = open(admin_csv)
         df_admins.to_csv (r'admin_data.csv', index = False, header=True)
         file2.close()
-        st.empty()
+        
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
         pass
@@ -107,7 +107,7 @@ if authentication_status:
         file6 = open('student_data.csv')
         df_students.to_csv (r'student_data.csv', index = False, header=True)
         file6.close()
-        st.empty()
+       
    ############################# add subjectfile 7,8#######################################################
     elif select_item == "Add Subject":      ### add subject
         pass
