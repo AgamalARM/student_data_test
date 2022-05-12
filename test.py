@@ -9,6 +9,9 @@ st.title("Dexcom Students System")
 names = ['Admin','Teacher']
 usernames = ['admin','teacher']
 passwords = ['123','456']
+
+admin_csv = "admin_data.csv"
+student_csv = "student_data.csv"
 ##################################
 hashed_passwords = stauth.Hasher(passwords).generate()
 authenticator = stauth.Authenticate(names,usernames,hashed_passwords,
@@ -25,7 +28,7 @@ if authentication_status:
                   ("Add Admin", "Add Teacher", "Add Student","Add Subject"))
 #######################   add admin file 1,2  ###############################################
     if select_item == "Add Admin":      ### add admin
-        file1 = open("admin_data.csv")
+        file1 = open(admin_csv)
         df_admins = pd.DataFrame(file1)  
         file1.close()
         
@@ -56,8 +59,8 @@ if authentication_status:
         csv1 = convert_df(df_admins)
         #st.write(csv1)
         
-        file2 = open('admin_data.csv')
-        df_admins.to_csv (r'admin_data.csv', index = False, header=True)
+        file2 = open(admin_csv)
+        df_admins.to_csv (r admin_csv, index = False, header=True)
         file2.close()
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
