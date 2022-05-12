@@ -60,7 +60,7 @@ if authentication_status:
         #st.write(csv1)
         
         file2 = open(admin_csv)
-        df_admins.to_csv (r admin_csv, index = False, header=True)
+        df_admins.to_csv (r 'admin_data.csv', index = False, header=True)
         file2.close()
   ###################################### add teacher file 3,4 ###############################################
     elif select_item == "Add Teacher":  ### add teacher
